@@ -3,6 +3,12 @@ kind: Kustomization
 
 namespace: argo-cd
 resources:
-  # - https://github.com/argoproj/argo-cd//manifests/crds/?ref=v3.3.2
-  # - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.3.2/manifests/namespace-install.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.3.2/manifests/install.yaml
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /subjects/0/namespace
+        value: argo-cd
+    target:
+      kind: ClusterRoleBinding
