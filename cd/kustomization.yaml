@@ -3,8 +3,8 @@ kind: Kustomization
 
 namespace: argo-cd
 resources:
-  - https://github.com/argoproj/argo-cd//manifests/crds/?ref=v3.3.3
-  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.3.3/manifests/namespace-install.yaml
+  - https://github.com/argoproj/argo-cd//manifests/crds/?ref=v3.3.4
+  - https://raw.githubusercontent.com/argoproj/argo-cd/refs/tags/v3.3.4/manifests/namespace-install.yaml
 
 patches:
 - patch: |-
